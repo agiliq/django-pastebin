@@ -1,14 +1,29 @@
-import ez_setup
-ez_setup.use_setuptools()
 from setuptools import setup, find_packages
+
 setup(
     name = "django-pastebin",
-    version = "0.1",
-    packages = find_packages(),
-    py_modules = ['setup', 'ez_setup'],
-    author = "Agiliq and friends",
-    author_email = "shabda@agiliq.com", 
     description = "A django based pastebin",
-    url = "http://github.com/agiliq/django-pastebin",
-    include_package_data = True
+    keywords='django, pastebin',
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    version="1.1",
+    author="Agiliq Solutions",
+    author_email="hello@agiliq.com",
+    classifiers = ['Development Status :: 4 - Beta',
+                   'Environment :: Web Environment',
+                   'Framework :: Django',
+                   'Intended Audience :: Developers',
+                   'License :: OSI Approved :: BSD License',
+                   'Operating System :: OS Independent',
+                   'Programming Language :: Python',
+                   'Topic :: Internet :: WWW/HTTP',
+                   'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
+                   'Topic :: Internet :: WWW/HTTP :: WSGI',
+                   'Topic :: Software Development :: Libraries :: Application Frameworks',
+                   'Topic :: Software Development :: Libraries :: Python Modules',
+                   ],
+    url="http://www.agiliq.com/",
+    license="BSD",
+    platforms=["all"],
 )
