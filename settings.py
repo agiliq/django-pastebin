@@ -1,5 +1,3 @@
-from localsettings import *
-
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
 )
@@ -34,9 +32,8 @@ SECRET_KEY = 'f-iq=-8#3ur2-wurp=ur-)rw9yd1(8e5+&c#5w0nmj@je*z!^)'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.load_template_source',
-    'django.template.loaders.app_directories.load_template_source',
-#     'django.template.loaders.eggs.load_template_source',
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -54,10 +51,12 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-TEMPLATE_CONTEXT_PROCESSORS =("django.core.context_processors.auth",
+TEMPLATE_CONTEXT_PROCESSORS =(
+    "django.contrib.auth.context_processors.auth",
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
-    "django.core.context_processors.media")
+    "django.core.context_processors.media",
+    )
 
 INSTALLED_APPS = (
     'pastebin',
@@ -68,3 +67,9 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     
 )
+
+try:
+    from localsettings import *
+except ImportError:
+    print "Missing localsetting"
+    raise
