@@ -20,11 +20,11 @@ class CodePaste(models.Model):
     def get_html_url(self):
         return ('pastebin.views.html', [self.id])
     
-    def save(self):
+    def save(self, *args, **kwargs):
         """Htmlize text and save to htmld_text. Use Pygments"""
         
         self.htmld_text = htmlize(self.text, self.language)
-        super(CodePaste, self).save()
+        super(CodePaste, self).save(*args, **kwargs)
         
     
     
