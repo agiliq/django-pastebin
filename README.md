@@ -1,3 +1,10 @@
-A django based pastebin.
+### A Django based pastebin.
 
-Licensed under BSD.
+### Installation
+
+pip install -r requirements.txt
+python setup.py install
+
+#### License 
+
+BSD
