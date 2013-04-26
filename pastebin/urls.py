@@ -1,13 +1,16 @@
 from django.conf.urls.defaults import *
-from django.views.generic.simple import direct_to_template
 from django.conf import settings
+from django.conf.urls import patterns
+from django.views.generic import TemplateView
 
 urlpatterns = patterns('pastebin.views',
         url(r'^$', 'index', name='djpaste_index'),
-        url(r'^help/$', direct_to_template, {'template':'djpaste/help.html'}, name='djpaste_help'),
+        url(r'^$', TemplateView.as_view(template_name='djpaste/help.html'), name='djpaste_help'),
         url(r'^paste/(?P<id>\d+)/$', 'paste_details', name='djpaste_paste_details'),
         url(r'^plain/(?P<id>\d+)/$', 'plain', name='djpaste_plain'),
         url(r'^html/(?P<id>\d+)/$', 'html', name='djpaste_html'),
+
+
 )
 
 if settings.DEBUG:    
