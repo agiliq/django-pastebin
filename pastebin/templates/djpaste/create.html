@@ -8,7 +8,7 @@
   {% endblock %}
 {% block content %}
 <div class="pasteform">
-<form action="." method="post">
+<form action="." method="post">{% csrf_token %} 
     <table>
         {{form}}
     </table>
