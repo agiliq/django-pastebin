@@ -35,6 +35,8 @@ class FormIndex(View):
             request.session['name'] = form.cleaned_data['name']
             return HttpResponseRedirect(paste.get_absolute_url())
 
+index = FormIndex.as_view()
+
 class PasteDetails(View):
     def get(self, request, id):
         paste = get_object_or_404(CodePaste, id = id)
@@ -50,6 +52,9 @@ class Plain(View):
 
 plain = Plain.as_view()
 
-def html(request, id):
-    paste = get_object_or_404(CodePaste, id = id)
-    return HttpResponse(paste.htmld_text, mimetype="text/plain")
+class Html(View):
+    def get(self, request, id):
+        paste = get_object_or_404(CodePaste, id = id)
+        return HttpResponse(paste.htmld_text, mimetype= "text/plain")
+
+html = Html.as_view()
