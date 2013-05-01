@@ -1,6 +1,7 @@
 # Django settings for pastebin project.
 
 import os
+import sys
 
 proj_dir = os.path.dirname(os.path.realpath(__file__))
 
