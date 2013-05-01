@@ -3,8 +3,12 @@ from django.conf import settings
 from django.conf.urls import patterns
 from django.views.generic import TemplateView
 
+from .views import FormIndex
+from .views import PasteDetails
+
+
 urlpatterns = patterns('pastebin.views',
-        url(r'^$', 'index', name='djpaste_index'),
+        url(r'^$', FormIndex.as_view(), name='djpaste_index'),
         url(r'^help/$', TemplateView.as_view(template_name='djpaste/help.html'), name='djpaste_help'),
         url(r'^paste/(?P<id>\d+)/$', 'paste_details', name='djpaste_paste_details'),
         url(r'^plain/(?P<id>\d+)/$', 'plain', name='djpaste_plain'),
