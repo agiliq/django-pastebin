@@ -43,10 +43,12 @@ class PasteDetails(View):
 
 paste_details = PasteDetails.as_view()
 
+class Plain(View):
+    def get(self, request, id):
+        paste = get_object_or_404(CodePaste, id = id)
+        return HttpResponse(paste.text, mimetype="text/plain")
 
-def plain(request, id):
-    paste = get_object_or_404(CodePaste, id = id)
-    return HttpResponse(paste.text, mimetype="text/plain")
+plain = Plain.as_view()
 
 def html(request, id):
     paste = get_object_or_404(CodePaste, id = id)
