@@ -1,0 +1,18 @@
+{% extends 'djpaste/base.html' %}
+  {% block script %}
+  <script type="text/javascript" language="javascript">
+  function place_focus(){
+    document.forms[0].elements[0].focus();
+  }
+  </script>
+  {% endblock %}
+{% block content %}
+<div class="pasteform">
+<form action="." method="post">{% csrf_token %} 
+    <table>
+        {{form}}
+    </table>
+    <input type="submit" name="submit" value="Paste it" />
+</form>
+</div>
+{% endblock %}

@@ -1,8 +1,4 @@
 *.pyc
-*localsettings.py
 *dist/
 *egg-info/
-*.db
 *~
-pastebin/.git/*
-pastebin/.travis.yml

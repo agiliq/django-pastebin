@@ -1,0 +1,30 @@
+{% extends 'djpaste/base.html' %}
+
+{% block content %}
+
+<h3 class="titletxt">
+    {{paste.title}}
+</h3>
+<div id="controls">
+    <span class="language">
+        Language: {{paste.language}}
+    </span>
+    <div class="choices">
+    <a href={{paste.get_plain_url}}>See plain</a>
+    <a href={{paste.get_html_url}}>See html</a>
+    </div>
+</div>
+
+<div id="pastetext">
+{{paste.htmld_text|safe}}
+</div>
+
+<div id="info">
+    Pasted
+    {% if paste.name %}
+     by {{paste.name}}
+    {% endif %}
+    on {{paste.created_on}}
+</div>
+
+{% endblock %}

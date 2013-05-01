@@ -1,0 +1,4 @@
+include README
+include LICENSE
+recursive-include pastebin/templates *
+recursive-include site_media *
