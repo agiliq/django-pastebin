@@ -5,7 +5,7 @@ from django.views.generic import TemplateView
 
 from .views import FormIndex
 from .views import PasteDetails
-
+from .views import Plain
 
 urlpatterns = patterns('pastebin.views',
         url(r'^$', FormIndex.as_view(), name='djpaste_index'),
