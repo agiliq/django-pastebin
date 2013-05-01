@@ -1,6 +1,7 @@
 *.pyc
-localsettings.py
-dist/
+*localsettings.py
+*dist/
 *egg-info/
 *.db
 *~
+pastbin/.git/*
