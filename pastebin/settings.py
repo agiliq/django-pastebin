@@ -4,6 +4,8 @@ import os
 
 proj_dir = os.path.dirname(os.path.realpath(__file__))
 
+sys.path.insert(0, proj_dir)
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
