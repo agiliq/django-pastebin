@@ -1,4 +1,3 @@
-from django import forms
 from django.shortcuts import render_to_response, get_object_or_404
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
@@ -20,7 +19,7 @@ class FormIndex(View):
         try:
             self.initial['language'] = request.session['language']
             self.initial['name'] = request.session['name']
-        except KeyError, e:
+        except KeyError:
             self.initial['language'] = ''
             self.initial['name'] = ''
         form = self.form_class(initial=self.initial)
