@@ -1,12 +1,6 @@
-from django.conf.urls import *
+from django.conf.urls import patterns,url
 from django.conf import settings
-from django.conf.urls import patterns
 from django.views.generic import TemplateView
-
-from .views import FormIndex
-from .views import PasteDetails
-from .views import Plain
-from .views import Html
 
 urlpatterns = patterns('pastebin.views',
         url(r'^$', 'index', name='djpaste_index'),
