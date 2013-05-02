@@ -1,13 +1,14 @@
 from django.db import models
 
+
 class CodePaste(models.Model):
     text = models.TextField()
     htmld_text = models.TextField()
     language = models.CharField(max_length=30)
-    title = models.CharField(max_length = 50)
-    name = models.CharField(max_length = 50)
-    created_on = models.DateField(auto_now_add = 1)
-    
+    title = models.CharField(max_length=50)
+    name = models.CharField(max_length=50)
+    created_on = models.DateField(auto_now_add=1)
+
     @models.permalink
     def get_absolute_url(self):
         return ('pastebin.views.paste_details', [self.id])
@@ -27,11 +28,10 @@ class CodePaste(models.Model):
         super(CodePaste, self).save(*args, **kwargs)
         
     
-    
 def htmlize(text, language):
     from pygments import highlight
     from pygments.formatters import HtmlFormatter as Formatter
-    if language == 'Python':    
+    if language == 'Python':   
         from pygments.lexers import PythonLexer as Lexer
     elif language == 'Perl':
         from pygments.lexers import PerlLexer as Lexer
@@ -59,3 +59,4 @@ def htmlize(text, language):
     """
     htmld = highlight(text, Lexer(), Formatter(linenos='table'))
     return htmld
+    
