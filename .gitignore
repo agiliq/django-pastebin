@@ -1,4 +1,5 @@
 *.pyc
+.coverage
 localsettings.py
 dist/
 *egg-info/
