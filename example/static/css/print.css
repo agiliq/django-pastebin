@@ -1,0 +1,73 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* --------- Universal --------- */
+* {
+	font-family:"Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bolder;
+	margin:0px;
+	padding:0px;
+}
+
+body {
+	color:#000;
+}
+
+/* --------- Links --------- */
+a:link, a:visited, a:hover, a:active{
+	text-decoration:none;
+	border:none;
+	color:#000;
+}
+
+/* --------- Layout --------- */
+#container {
+	width:100%;
+}
+
+#footer {
+	color:#000;
+	font-size:75%;
+	margin:0px auto;
+	text-align:center;
+}
+
+/* --------- Header Tags --------- */
+h1, h2, h3, h4, h5, h6 {
+	color:#000;
+	font-weight:bolder;
+	padding:15px;
+}
+
+h1 {font-size: 36px;}
+h2 {font-size: 24px;}
+h3 {font-size: 18px;}
+h4 {font-size: 16px;}
+h5 {font-size: 14px;}
+h6 {font-size: 12px;}
+
+/* --------- Typography --------- */
+
+p {
+	font-size:medium;
+	line-height:1;
+}
+
+ul {
+	list-style:square inside;
+}
+
+ol {
+	list-style:lower-roman inside;
+}
+
+/* --------- Stops --------- */
+h1:after, li:after, p:after {
+	content:".";
+	color:#000;
+	font-family:Helvatica, Arial, sans-serif;
+}
+
+p:after, li:after {
+	font-size:24px;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<link rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/style.css" />
+<link rel="stylesheet" media="print" href="{{ STATIC_URL }}css/print.css" />
+<title>
+  {% block title %}
+  DjPaste - Pastebin for code DJs  
+  {% endblock %}
+</title>
+  {% block script %}
+  <script language="javascript">
+  function place_focus(){
+  }
+  </script>
+  {% endblock %}
+</head>
+
+<body onload="place_focus()">
+<div id="wrap">
+<div id="header">
+  {% block header %}
+  <h1>
+    Djpaste
+  </h1>
+  {% endblock %}
+</div>
+
+<div id="container">
+  {% block content %}
+  {% endblock %}
+</div>
+<div id="footer">
+  {% block footer %}
+  <span class=blurb"">
+    <a href="{% url 'djpaste_help' %}">How to paste?</a> | <a href="{% url 'djpaste_index' %}">New Paste</a> | <a href="http://uswaretech.com/">Usware</a>
+  </span>
+  {% endblock %}
+</div>
+</div>
+</body>
+</html>
