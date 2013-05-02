@@ -20,6 +20,8 @@ class PasteForm(forms.Form):
     def save(self):
         snippet = CodePaste(text=self.cleaned_data['text'], 
                             language=self.cleaned_data['language'], 
-                            title=self.cleaned_data['title'], name=self.cleaned_data['name'])
+                            title=self.cleaned_data['title'], 
+                            name=self.cleaned_data['name'])
         snippet.save()
         return snippet
+        
