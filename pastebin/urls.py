@@ -18,9 +18,6 @@ urlpatterns = patterns('pastebin.views',
 
 )
 
-if settings.DEBUG:    
-    media_dir = settings.MEDIA_ROOT
-    urlpatterns += patterns('',
-            url(r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': media_dir}),
-        )
-
+urlpatterns += patterns('',
+    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+)

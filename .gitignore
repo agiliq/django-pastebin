@@ -1,7 +1,6 @@
 *.pyc
-.coverage
-localsettings.py
-dist/
+*dist/
 *egg-info/
-*.db
 *~
+example/localsettings.py
+example/static
