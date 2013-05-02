@@ -3,7 +3,7 @@
 import os
 import sys
 
-proj_dir = os.path.dirname(os.path.realpath(__file__))
+proj_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 
 sys.path.insert(0, proj_dir)
 
@@ -57,7 +57,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = ''
+MEDIA_ROOT = "%s/static_media" % proj_dir
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
@@ -72,7 +72,7 @@ STATIC_ROOT = "%s/static_media" % proj_dir
 
 # URL prefix for static files.
 # Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+STATIC_URL = '/site_media/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
